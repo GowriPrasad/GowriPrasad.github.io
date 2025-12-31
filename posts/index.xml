@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on My MindMap</title>
+    <link>https://gowriprasad.github.io/posts/</link>
+    <description>Recent content in Posts on My MindMap</description>
+    <generator>Hugo -- 0.153.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Dec 2025 21:35:49 +0800</lastBuildDate>
+    <atom:link href="https://gowriprasad.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dots, Lines and a Thread. Connecting the dots.</title>
+      <link>https://gowriprasad.github.io/posts/connecting-the-dots/</link>
+      <pubDate>Wed, 31 Dec 2025 21:35:49 +0800</pubDate>
+      <guid>https://gowriprasad.github.io/posts/connecting-the-dots/</guid>
+      <description>A practical and personal perspective on how real learning happens in technology—by creating, strengthening, and connecting knowledge dots over time.</description>
+    </item>
+  </channel>
+</rss>

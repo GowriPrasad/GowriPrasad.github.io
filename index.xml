@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>My MindMap</title>
+    <link>https://gowriprasad.github.io/</link>
+    <description>Recent content on My MindMap</description>
+    <generator>Hugo -- 0.153.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Dec 2025 22:28:34 +0800</lastBuildDate>
+    <atom:link href="https://gowriprasad.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://gowriprasad.github.io/about/</link>
+      <pubDate>Wed, 31 Dec 2025 22:28:34 +0800</pubDate>
+      <guid>https://gowriprasad.github.io/about/</guid>
+      <description>&lt;p&gt;Hi, I’m &lt;strong&gt;Gowri Prasad&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I work as an &lt;strong&gt;API Gateway and Integration Consultant&lt;/strong&gt;, helping teams design,
+secure, and operate large-scale integration platforms.&lt;/p&gt;
+&lt;p&gt;Over the years, I’ve learned that real expertise doesn’t come from memorizing
+tools or commands — it comes from &lt;strong&gt;understanding how systems behave, fail,
+and recover in real-world conditions&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This blog is my personal knowledge map:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Connecting ideas across APIs, integration, and software engineering&lt;/li&gt;
+&lt;li&gt;Writing to clarify my own understanding&lt;/li&gt;
+&lt;li&gt;Sharing lessons learned from real systems and real problems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If something here helps you think more clearly about a problem, then the blog
+has done its job.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dots, Lines and a Thread. Connecting the dots.</title>
+      <link>https://gowriprasad.github.io/posts/connecting-the-dots/</link>
+      <pubDate>Wed, 31 Dec 2025 21:35:49 +0800</pubDate>
+      <guid>https://gowriprasad.github.io/posts/connecting-the-dots/</guid>
+      <description>A practical and personal perspective on how real learning happens in technology—by creating, strengthening, and connecting knowledge dots over time.</description>
+    </item>
+  </channel>
+</rss>
