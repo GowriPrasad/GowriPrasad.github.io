@@ -2,10 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gowriprasad.github.io/about/</loc>
-    <lastmod>2025-12-31T22:28:34+08:00</lastmod>
+    <loc>https://gowriprasad.github.io/categories/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gowriprasad.github.io/tags/dev-setup/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gowriprasad.github.io/categories/engineering/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gowriprasad.github.io/tags/mac/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gowriprasad.github.io/posts/mac-dev-windows-execution/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gowriprasad.github.io/categories/mindmap/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gowriprasad.github.io/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gowriprasad.github.io/posts/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gowriprasad.github.io/tags/remote-development/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gowriprasad.github.io/tags/ssh/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gowriprasad.github.io/tags/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gowriprasad.github.io/tags/windows/</loc>
+    <lastmod>2026-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gowriprasad.github.io/about/</loc>
     <lastmod>2025-12-31T22:28:34+08:00</lastmod>
   </url><url>
     <loc>https://gowriprasad.github.io/tags/career-growth/</loc>
@@ -17,18 +50,10 @@
     <loc>https://gowriprasad.github.io/tags/learning/</loc>
     <lastmod>2025-12-31T21:35:49+08:00</lastmod>
   </url><url>
-    <loc>https://gowriprasad.github.io/posts/</loc>
-    <lastmod>2025-12-31T21:35:49+08:00</lastmod>
-  </url><url>
     <loc>https://gowriprasad.github.io/tags/programming/</loc>
     <lastmod>2025-12-31T21:35:49+08:00</lastmod>
   </url><url>
     <loc>https://gowriprasad.github.io/tags/software-engineering/</loc>
     <lastmod>2025-12-31T21:35:49+08:00</lastmod>
-  </url><url>
-    <loc>https://gowriprasad.github.io/tags/</loc>
-    <lastmod>2025-12-31T21:35:49+08:00</lastmod>
-  </url><url>
-    <loc>https://gowriprasad.github.io/categories/</loc>
   </url>
 </urlset>

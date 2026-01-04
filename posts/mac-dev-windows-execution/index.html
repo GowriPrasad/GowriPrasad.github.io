@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Mac as Dev Device, Windows as Execution Environment | My MindMap</title>
+<meta name="keywords" content="ssh, mac, windows, dev-setup, remote-development">
+<meta name="description" content="A clean, repeatable setup to use Mac for development and Windows as the execution environment using SSH and VS Code.">
+<meta name="author" content="Gowri Prasad">
+<link rel="canonical" href="https://gowriprasad.github.io/posts/mac-dev-windows-execution/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gowriprasad.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gowriprasad.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gowriprasad.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://gowriprasad.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://gowriprasad.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://gowriprasad.github.io/posts/mac-dev-windows-execution/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://gowriprasad.github.io/posts/mac-dev-windows-execution/">
+  <meta property="og:site_name" content="My MindMap">
+  <meta property="og:title" content="Mac as Dev Device, Windows as Execution Environment">
+  <meta property="og:description" content="A clean, repeatable setup to use Mac for development and Windows as the execution environment using SSH and VS Code.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-04T00:00:00+00:00">
+    <meta property="article:tag" content="Ssh">
+    <meta property="article:tag" content="Mac">
+    <meta property="article:tag" content="Windows">
+    <meta property="article:tag" content="Dev-Setup">
+    <meta property="article:tag" content="Remote-Development">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac as Dev Device, Windows as Execution Environment">
+<meta name="twitter:description" content="A clean, repeatable setup to use Mac for development and Windows as the execution environment using SSH and VS Code.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://gowriprasad.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Mac as Dev Device, Windows as Execution Environment",
+      "item": "https://gowriprasad.github.io/posts/mac-dev-windows-execution/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mac as Dev Device, Windows as Execution Environment",
+  "name": "Mac as Dev Device, Windows as Execution Environment",
+  "description": "A clean, repeatable setup to use Mac for development and Windows as the execution environment using SSH and VS Code.",
+  "keywords": [
+    "ssh", "mac", "windows", "dev-setup", "remote-development"
+  ],
+  "articleBody": "The Idea I like thinking and writing code on macOS\nI like executing and running workloads on Windows\nInstead of fighting tools,\nI separate concerns:\n🧠 Mac → Development device ⚙️ Windows → Execution environment SSH becomes the bridge.\nVS Code becomes the control panel.\nThis post documents the exact steps, so I never forget again.\nMental Model (MindMap) Mac = keyboard, editor, ideas Windows = CPU, GPU, services SSH = secure pipe Keys \u003e passwords Alias \u003e IPs Automation \u003e repetition Once this is set:\nMy Mac feels like it’s directly running Windows.\nStep 1: Install OpenSSH Server on Windows On Windows (target machine):\nOpen Settings Search for Optional features Click View features Search for OpenSSH Server Select it and Install This enables Windows to accept SSH connections.\nStep 2: Verify OpenSSH Installation and Service Open PowerShell as Administrator and run:\nGet-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*' Ensure both show State : Installed.\nStart and enable the service:\nStart-Service sshd Set-Service sshd -StartupType Automatic Step 3: Allow SSH Through Windows Firewall Get-NetFirewallRule -Name *ssh* If missing:\nNew-NetFirewallRule -Name sshd -DisplayName \"OpenSSH Server\" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22 Step 4: Generate SSH Key on Mac ls ~/.ssh/id_ed25519.pub If missing:\nssh-keygen -t ed25519 Step 5: Copy Public Key on Mac cat ~/.ssh/id_ed25519.pub Copy the output.\nStep 6: Add Public Key on Windows (Administrator User) File location (mandatory):\nC:\\ProgramData\\ssh\\administrators_authorized_keys Create and edit:\nNew-Item -Force -Path \"$env:ProgramData\\ssh\\administrators_authorized_keys\" -ItemType File notepad \"$env:ProgramData\\ssh\\administrators_authorized_keys\" Paste the key and save.\nStep 7: Apply Strict Permissions (Required) $path = \"$env:ProgramData\\\\ssh\\\\administrators_authorized_keys\" icacls $path /inheritance:r icacls $path /grant \"Administrators:F\" icacls $path /grant \"SYSTEM:F\" Step 8: Test SSH from Mac ssh @ Step 9: Add Key to macOS Keychain ssh-add --apple-use-keychain ~/.ssh/id_ed25519 Step 10: Configure SSH on Mac Edit config:\nnano ~/.ssh/config Add:\nHost * AddKeysToAgent yes UseKeychain yes IdentityFile ~/.ssh/id_ed25519 Step 11: Create SSH Alias Host win HostName User Connect using:\nssh win Step 12: VS Code Remote Explorer Open VS Code on Mac Install Remote Explorer Open Remote Explorer → SSH Connect to win Final Thought Write code where thinking is effortless.\nRun code where execution is powerful.\n",
+  "wordCount" : "357",
+  "inLanguage": "en",
+  "datePublished": "2026-01-04T00:00:00Z",
+  "dateModified": "2026-01-04T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Gowri Prasad"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gowriprasad.github.io/posts/mac-dev-windows-execution/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My MindMap",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gowriprasad.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gowriprasad.github.io/" accesskey="h" title="My MindMap (Alt + H)">My MindMap</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gowriprasad.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gowriprasad.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Mac as Dev Device, Windows as Execution Environment
+    </h1>
+    <div class="post-description">
+      A clean, repeatable setup to use Mac for development and Windows as the execution environment using SSH and VS Code.
+    </div>
+    <div class="post-meta"><span title='2026-01-04 00:00:00 +0000 UTC'>January 4, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Gowri Prasad</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="the-idea">The Idea<a hidden class="anchor" aria-hidden="true" href="#the-idea">#</a></h2>
+<p>I like <strong>thinking and writing code on macOS</strong><br>
+I like <strong>executing and running workloads on Windows</strong></p>
+<p>Instead of fighting tools,<br>
+<strong>I separate concerns</strong>:</p>
+<ul>
+<li>🧠 <strong>Mac</strong> → Development device</li>
+<li>⚙️ <strong>Windows</strong> → Execution environment</li>
+</ul>
+<p>SSH becomes the bridge.<br>
+VS Code becomes the control panel.</p>
+<p>This post documents the <strong>exact steps</strong>, so I never forget again.</p>
+<hr>
+<h2 id="mental-model-mindmap">Mental Model (MindMap)<a hidden class="anchor" aria-hidden="true" href="#mental-model-mindmap">#</a></h2>
+<ul>
+<li>Mac = keyboard, editor, ideas</li>
+<li>Windows = CPU, GPU, services</li>
+<li>SSH = secure pipe</li>
+<li>Keys &gt; passwords</li>
+<li>Alias &gt; IPs</li>
+<li>Automation &gt; repetition</li>
+</ul>
+<p>Once this is set:</p>
+<blockquote>
+<p>My Mac <em>feels</em> like it’s directly running Windows.</p>
+</blockquote>
+<hr>
+<h2 id="step-1-install-openssh-server-on-windows">Step 1: Install OpenSSH Server on Windows<a hidden class="anchor" aria-hidden="true" href="#step-1-install-openssh-server-on-windows">#</a></h2>
+<p>On <strong>Windows (target machine)</strong>:</p>
+<ol>
+<li>Open <strong>Settings</strong></li>
+<li>Search for <strong>Optional features</strong></li>
+<li>Click <strong>View features</strong></li>
+<li>Search for <strong>OpenSSH Server</strong></li>
+<li>Select it and <strong>Install</strong></li>
+</ol>
+<p>This enables Windows to <strong>accept SSH connections</strong>.</p>
+<hr>
+<h2 id="step-2-verify-openssh-installation-and-service">Step 2: Verify OpenSSH Installation and Service<a hidden class="anchor" aria-hidden="true" href="#step-2-verify-openssh-installation-and-service">#</a></h2>
+<p>Open <strong>PowerShell as Administrator</strong> and run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-WindowsCapability -Online | Where-Object Name <span style="color:#f92672">-like</span> <span style="color:#e6db74">&#39;OpenSSH*&#39;</span>
+</span></span></code></pre></div><p>Ensure both show <code>State : Installed</code>.</p>
+<p>Start and enable the service:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Start-Service sshd
+</span></span><span style="display:flex;"><span>Set-Service sshd -StartupType Automatic
+</span></span></code></pre></div><hr>
+<h2 id="step-3-allow-ssh-through-windows-firewall">Step 3: Allow SSH Through Windows Firewall<a hidden class="anchor" aria-hidden="true" href="#step-3-allow-ssh-through-windows-firewall">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-NetFirewallRule -Name *ssh*
+</span></span></code></pre></div><p>If missing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>New-NetFirewallRule -Name sshd -DisplayName <span style="color:#e6db74">&#34;OpenSSH Server&#34;</span> -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort <span style="color:#ae81ff">22</span>
+</span></span></code></pre></div><hr>
+<h2 id="step-4-generate-ssh-key-on-mac">Step 4: Generate SSH Key on Mac<a hidden class="anchor" aria-hidden="true" href="#step-4-generate-ssh-key-on-mac">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls ~/.ssh/id_ed25519.pub
+</span></span></code></pre></div><p>If missing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -t ed25519
+</span></span></code></pre></div><hr>
+<h2 id="step-5-copy-public-key-on-mac">Step 5: Copy Public Key on Mac<a hidden class="anchor" aria-hidden="true" href="#step-5-copy-public-key-on-mac">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ~/.ssh/id_ed25519.pub
+</span></span></code></pre></div><p>Copy the output.</p>
+<hr>
+<h2 id="step-6-add-public-key-on-windows-administrator-user">Step 6: Add Public Key on Windows (Administrator User)<a hidden class="anchor" aria-hidden="true" href="#step-6-add-public-key-on-windows-administrator-user">#</a></h2>
+<p>File location (mandatory):</p>
+<pre tabindex="0"><code>C:\ProgramData\ssh\administrators_authorized_keys
+</code></pre><p>Create and edit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>New-Item -Force -Path <span style="color:#e6db74">&#34;</span>$env:ProgramData<span style="color:#e6db74">\ssh\administrators_authorized_keys&#34;</span> -ItemType File
+</span></span><span style="display:flex;"><span>notepad <span style="color:#e6db74">&#34;</span>$env:ProgramData<span style="color:#e6db74">\ssh\administrators_authorized_keys&#34;</span>
+</span></span></code></pre></div><p>Paste the key and save.</p>
+<hr>
+<h2 id="step-7-apply-strict-permissions-required">Step 7: Apply Strict Permissions (Required)<a hidden class="anchor" aria-hidden="true" href="#step-7-apply-strict-permissions-required">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$path = <span style="color:#e6db74">&#34;</span>$env:ProgramData<span style="color:#e6db74">\\ssh\\administrators_authorized_keys&#34;</span>
+</span></span><span style="display:flex;"><span>icacls $path /inheritance<span style="color:#960050;background-color:#1e0010">:</span>r
+</span></span><span style="display:flex;"><span>icacls $path /grant <span style="color:#e6db74">&#34;Administrators:F&#34;</span>
+</span></span><span style="display:flex;"><span>icacls $path /grant <span style="color:#e6db74">&#34;SYSTEM:F&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="step-8-test-ssh-from-mac">Step 8: Test SSH from Mac<a hidden class="anchor" aria-hidden="true" href="#step-8-test-ssh-from-mac">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh &lt;windows-username&gt;@&lt;windows-ip&gt;
+</span></span></code></pre></div><hr>
+<h2 id="step-9-add-key-to-macos-keychain">Step 9: Add Key to macOS Keychain<a hidden class="anchor" aria-hidden="true" href="#step-9-add-key-to-macos-keychain">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+</span></span></code></pre></div><hr>
+<h2 id="step-10-configure-ssh-on-mac">Step 10: Configure SSH on Mac<a hidden class="anchor" aria-hidden="true" href="#step-10-configure-ssh-on-mac">#</a></h2>
+<p>Edit config:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano ~/.ssh/config
+</span></span></code></pre></div><p>Add:</p>
+<pre tabindex="0"><code class="language-ssh" data-lang="ssh">Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+</code></pre><hr>
+<h2 id="step-11-create-ssh-alias">Step 11: Create SSH Alias<a hidden class="anchor" aria-hidden="true" href="#step-11-create-ssh-alias">#</a></h2>
+<pre tabindex="0"><code class="language-ssh" data-lang="ssh">Host win
+  HostName &lt;WINDOWS_IP_ADDRESS&gt;
+  User &lt;WINDOWS_USERNAME&gt;
+</code></pre><p>Connect using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh win
+</span></span></code></pre></div><hr>
+<h2 id="step-12-vs-code-remote-explorer">Step 12: VS Code Remote Explorer<a hidden class="anchor" aria-hidden="true" href="#step-12-vs-code-remote-explorer">#</a></h2>
+<ol>
+<li>Open VS Code on Mac</li>
+<li>Install <strong>Remote Explorer</strong></li>
+<li>Open <strong>Remote Explorer → SSH</strong></li>
+<li>Connect to <code>win</code></li>
+</ol>
+<hr>
+<h2 id="final-thought">Final Thought<a hidden class="anchor" aria-hidden="true" href="#final-thought">#</a></h2>
+<p>Write code where thinking is effortless.<br>
+Run code where execution is powerful.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gowriprasad.github.io/tags/ssh/">Ssh</a></li>
+      <li><a href="https://gowriprasad.github.io/tags/mac/">Mac</a></li>
+      <li><a href="https://gowriprasad.github.io/tags/windows/">Windows</a></li>
+      <li><a href="https://gowriprasad.github.io/tags/dev-setup/">Dev-Setup</a></li>
+      <li><a href="https://gowriprasad.github.io/tags/remote-development/">Remote-Development</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://gowriprasad.github.io/posts/connecting-the-dots/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Dots, Lines and a Thread. Connecting the dots.</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://gowriprasad.github.io/">My MindMap</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

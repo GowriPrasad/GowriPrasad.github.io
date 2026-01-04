@@ -6,8 +6,15 @@
     <description>Recent content on My MindMap</description>
     <generator>Hugo -- 0.153.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Dec 2025 22:28:34 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 04 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://gowriprasad.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac as Dev Device, Windows as Execution Environment</title>
+      <link>https://gowriprasad.github.io/posts/mac-dev-windows-execution/</link>
+      <pubDate>Sun, 04 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://gowriprasad.github.io/posts/mac-dev-windows-execution/</guid>
+      <description>A clean, repeatable setup to use Mac for development and Windows as the execution environment using SSH and VS Code.</description>
+    </item>
     <item>
       <title>About</title>
       <link>https://gowriprasad.github.io/about/</link>

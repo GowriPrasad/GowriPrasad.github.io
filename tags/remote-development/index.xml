@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on My MindMap</title>
-    <link>https://gowriprasad.github.io/posts/</link>
-    <description>Recent content in Posts on My MindMap</description>
+    <title>Remote-Development on My MindMap</title>
+    <link>https://gowriprasad.github.io/tags/remote-development/</link>
+    <description>Recent content in Remote-Development on My MindMap</description>
     <generator>Hugo -- 0.153.5</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gowriprasad.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://gowriprasad.github.io/tags/remote-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mac as Dev Device, Windows as Execution Environment</title>
       <link>https://gowriprasad.github.io/posts/mac-dev-windows-execution/</link>
       <pubDate>Sun, 04 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://gowriprasad.github.io/posts/mac-dev-windows-execution/</guid>
       <description>A clean, repeatable setup to use Mac for development and Windows as the execution environment using SSH and VS Code.</description>
-    </item>
-    <item>
-      <title>Dots, Lines and a Thread. Connecting the dots.</title>
-      <link>https://gowriprasad.github.io/posts/connecting-the-dots/</link>
-      <pubDate>Wed, 31 Dec 2025 21:35:49 +0800</pubDate>
-      <guid>https://gowriprasad.github.io/posts/connecting-the-dots/</guid>
-      <description>A practical and personal perspective on how real learning happens in technology—by creating, strengthening, and connecting knowledge dots over time.</description>
     </item>
   </channel>
 </rss>
